@@ -17,7 +17,16 @@ var campgroundsRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
 // seedDB();
-mongoose.connect("mongodb+srv://dbUser:12345droeen@cluster0-uwzr8.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://dbUser:12345droeen@cluster0-uwzr8.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("ERROR", err.message);
+});
+
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
