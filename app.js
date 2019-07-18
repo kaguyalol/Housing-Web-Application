@@ -17,7 +17,6 @@ var campgroundsRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
 // seedDB();
-// mongodb+srv://dbUser:12345droeen@cluster0-uwzr8.mongodb.net/test?retryWrites=true&w=majority
 mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
 	useCreateIndex: true
