@@ -1,0 +1,47 @@
+<%include ../partials/header%>
+
+<div class="container">
+	<div class="row align-items-center">
+		<div class="col-12 mb-4rem text-center">
+			<h2>Edit <em><%=campground.name%></em></h2>
+		</div>
+	</div>
+	
+	<div class="row align-items-center">	
+		<div class="col-4">
+		</div>
+		<div class="col-4">
+			<form action="/campgrounds/<%=campground._id%>/?_method=PUT" method="POST">
+				<div class="form-group">
+                    <label for="campName">Camp Name</label>
+                    <!-- campground[campName] next all fields into one object, refer to campground -->
+					<input class="form-control" type="text" name="campground[name]" id="campName" value="<%=campground.name%>">
+				</div>
+				<div class="form-group">
+					<label for="imgURL">Image URL</label>
+					<input class="form-control" type="text" name="campground[img]" id="imgURL" value="<%=campground.img%>">
+				</div>
+				<div class="form-group">
+					<label for="price">Price</label>
+					<input class="form-control" type="number" name="campground[price]" id="price" value="<%=campground.price%>" min="0.01" step="0.01">
+				</div>
+				<div class="form-group">
+					<label for="desc">Description</label>
+					<textarea class="form-control" type="text" name="campground[desc]" id="desc" rows="5"><%=campground.description%></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary mb-2"> Submit</button>
+				<a href="/campgrounds">Go Back</a>
+			</form>
+		</div>
+	</div>
+	<div>
+		
+	</div>
+		
+	
+	
+</div>
+
+
+
+<%include ../partials/footer%>
