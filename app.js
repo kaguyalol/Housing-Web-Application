@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
@@ -18,7 +19,6 @@ var campgroundsRoutes = require("./routes/campgrounds"),
 
 // seedDB();
 // mongodb+srv://dbUser:12345droeen@cluster0-uwzr8.mongodb.net/test?retryWrites=true&w=majority
-require('dotenv').config();
 mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
 	useCreateIndex: true
